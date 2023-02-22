@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/w_input"
+        android:hint="Enter Your Weight(in Kg)"
+        android:textSize="@dimen/text_size"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="180dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/et2_input"
+        android:hint="Enter Your Height(in cm)"
+        android:textSize="@dimen/text_size"
+        android:layout_below="@+id/w_input"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnn_click"
+        android:text="@string/btnn_click"
+        android:layout_below="@+id/et2_input"
+        android:textAllCaps="false"
+        android:textSize="@dimen/btn_text_size"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:backgroundTint="@color/black"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/te_input"
+        android:text="BMI Value:"
+        android:textSize="@dimen/text_value_size"
+        android:layout_below="@+id/btnn_click"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/te2_input"
+        android:text="Your are Under Weight/ Over Weight/Obesity"
+        android:textSize="@dimen/text_value_size"
+        android:layout_below="@+id/te_input"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+
+        />
+
+
+
+
+</RelativeLayout>

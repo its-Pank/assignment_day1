@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="btnn_click">Calculate BMI</string>
+</resources>
