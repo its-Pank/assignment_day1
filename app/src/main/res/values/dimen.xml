@@ -2,5 +2,10 @@
 <resources>
     <dimen name="btn_text_size">21sp</dimen>
     <dimen name="text_size">25sp</dimen>
+    <dimen name="org">20sp</dimen>
     <dimen name="text_value_size">18sp</dimen>
+    <dimen name="about_app">25sp</dimen>
+    <dimen name="dev">25sp</dimen>
+    <dimen name="name">21sp</dimen>
+    <dimen name="delpoy">22sp</dimen>
 </resources>

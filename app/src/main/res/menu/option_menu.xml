@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/about_app"
+        android:title="About App"
+        />
+
+    <item
+        android:id="@+id/contact_us"
+        android:title=" Contact Us"
+        />
+
+    <item
+        android:id="@+id/abt_developer"
+        android:title="About Developer"
+        />
+
+    <item
+        android:id="@+id/chart"
+        android:title="BMI Chart"/>
+
+    <item
+        android:id="@+id/exit"
+        android:title="Exit"
+         />
+
+</menu>
