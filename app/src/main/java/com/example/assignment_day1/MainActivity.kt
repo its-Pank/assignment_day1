@@ -13,8 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.text.DecimalFormat
 
 
-
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
     val TAG: String = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +22,8 @@ class MainActivity : AppCompatActivity(){
 
         var isclear: Boolean = false
 
-        var  weight = findViewById<EditText>(R.id.w_input)
-        var height =findViewById<EditText>(R.id.h_input)
+        var weight = findViewById<EditText>(R.id.w_input)
+        var height = findViewById<EditText>(R.id.h_input)
         val c_button = findViewById<Button>(R.id.btnn_click)
         val result = findViewById<TextView>(R.id.result)
         val value = findViewById<TextView>(R.id.te2_input)
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity(){
 
 
 
-        c_button.setOnClickListener () {
+        c_button.setOnClickListener() {
             if (weight.text.toString().isEmpty() && height.text.toString().isEmpty()) {
                 Toast.makeText(this, "please fill both value", Toast.LENGTH_SHORT).show()
             }
@@ -46,7 +45,7 @@ class MainActivity : AppCompatActivity(){
                 Toast.makeText(this, "please fill the weight", Toast.LENGTH_SHORT).show()
                 weight.requestFocus()
             }
-            if (weight.text.toString().isNotEmpty() && height.text.toString().isNotEmpty()){
+            if (weight.text.toString().isNotEmpty() && height.text.toString().isNotEmpty()) {
 
             }
 
@@ -80,7 +79,7 @@ class MainActivity : AppCompatActivity(){
                         val bmi = wF / (hi * hi)
                         result.text = ((bmi * 100) / 100.0).toString()
 
-                       // var bmi: Float = (wF / ((hF / 100) * (hF / 100)))5
+                        // var bmi: Float = (wF / ((hF / 100) * (hF / 100)))5
                         var msg: String = "";
 
 
@@ -95,7 +94,7 @@ class MainActivity : AppCompatActivity(){
                         }
                         val df = DecimalFormat("#.##")
                         value.setText(msg);
-                        result.setText (df.format(bmi).toString())
+                        result.setText(df.format(bmi).toString())
 
 
                     }
@@ -108,9 +107,7 @@ class MainActivity : AppCompatActivity(){
         }
 
 
-
     }
-
 
 
     override fun onStart() {
@@ -150,35 +147,37 @@ class MainActivity : AppCompatActivity(){
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.about_app ->{
-                val intent = Intent(this, about_App::class.java).also{
-                    startActivity(intent)
-                }
+        when (item.itemId) {
+            R.id.about_app -> {
+                val intent = Intent(this, about_App::class.java)
+
+                startActivity(intent)
+                return true
+
 
             }
 
-            R.id.abt_developer ->{
-                val intent = Intent(this, abt_developer::class.java).also {
-                    startActivity(intent)
-                 }
+            R.id.abt_developer -> {
+                val intent = Intent(this, abt_developer::class.java)
+                startActivity(intent)
+                return  true
 
+            }
 
-                }
-
-            R.id.contact_us ->{
+            R.id.contact_us -> {
                 val intent = Intent(this, contact_us::class.java).also {
                     startActivity(intent)
+                    return true
                 }
 
             }
 
-            R.id.chart ->{
+            R.id.chart -> {
                 val intent = Intent(this, chart::class.java).also {
                     startActivity(it)
                 }
             }
-            R.id.exit ->{
+            R.id.exit -> {
                 finish()
             }
         }
@@ -186,7 +185,6 @@ class MainActivity : AppCompatActivity(){
     }
 
     override fun onBackPressed() = Unit
-
 
 
 }
