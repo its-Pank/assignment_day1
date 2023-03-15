@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.text.DecimalFormat
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity(val it: Intent) : AppCompatActivity() {
     val TAG: String = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                         }
                         val df = DecimalFormat("#.##")
                         value.setText(msg);
-                        result.setText(df.format(bmi).toString())
+                        result.setText("Your BMI Value : " + df.format(bmi).toString())
 
 
                     }
@@ -150,8 +150,7 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.about_app -> {
                 val intent = Intent(this, about_App::class.java)
-
-                startActivity(intent)
+                startActivity(it)
                 return true
 
 
@@ -159,14 +158,14 @@ class MainActivity : AppCompatActivity() {
 
             R.id.abt_developer -> {
                 val intent = Intent(this, abt_developer::class.java)
-                startActivity(intent)
+                startActivity(it)
                 return  true
 
             }
 
             R.id.contact_us -> {
                 val intent = Intent(this, contact_us::class.java).also {
-                    startActivity(intent)
+                    startActivity(it)
                     return true
                 }
 
@@ -184,7 +183,9 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onBackPressed() = Unit
+    override fun onBackPressed() {
+
+    }
 
 
 }
