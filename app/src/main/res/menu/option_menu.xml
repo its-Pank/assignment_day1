@@ -21,8 +21,8 @@
         android:title="BMI Chart"/>
 
     <item
-        android:id="@+id/exit"
-        android:title="Exit"
+        android:id="@+id/web"
+        android:title="Web View"
          />
 
 </menu>

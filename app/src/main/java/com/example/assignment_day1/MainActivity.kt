@@ -9,11 +9,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import java.text.DecimalFormat
 
 
-class MainActivity(val it: Intent) : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     val TAG: String = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -150,7 +151,7 @@ class MainActivity(val it: Intent) : AppCompatActivity() {
         when (item.itemId) {
             R.id.about_app -> {
                 val intent = Intent(this, about_App::class.java)
-                startActivity(it)
+                startActivity(intent)
                 return true
 
 
@@ -158,35 +159,55 @@ class MainActivity(val it: Intent) : AppCompatActivity() {
 
             R.id.abt_developer -> {
                 val intent = Intent(this, abt_developer::class.java)
-                startActivity(it)
+                startActivity(intent)
                 return  true
 
             }
 
             R.id.contact_us -> {
-                val intent = Intent(this, contact_us::class.java).also {
-                    startActivity(it)
+                val intent = Intent(this, contact_us::class.java)
+                    startActivity(intent)
                     return true
-                }
 
             }
 
             R.id.chart -> {
-                val intent = Intent(this, chart::class.java).also {
-                    startActivity(it)
-                }
+                val intent = Intent(this, chart::class.java)
+                    startActivity(intent)
             }
-            R.id.exit -> {
-                finish()
+            R.id.web -> {
+                val intent = Intent(this, webView::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)
     }
 
+
     override fun onBackPressed() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(R.string.app_name)
+        builder.setMessage("Do You want to Exit")
+        builder.setIcon(android.R.drawable.ic_dialog_alert)
+
+        builder.setPositiveButton("Yes")
+        { dialogInterface, which ->
+            finish()
+        }
+        builder.setNegativeButton("No"){dialogInterface, which ->
+            Toast.makeText(applicationContext,"clicked No",Toast.LENGTH_SHORT).show()
+        }
+        builder.setNeutralButton("Cancel") { dialogInterface, which ->
+            Toast.makeText(applicationContext, "operation cancel", Toast.LENGTH_SHORT).show()
+        }
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
 
     }
 
-
 }
+
+
+
 
