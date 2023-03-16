@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.about_app -> {
-                val intent = Intent(this, about_App::class.java)
+                val intent = Intent(this, webView::class.java)
                 startActivity(intent)
                 return true
 
@@ -175,10 +175,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, chart::class.java)
                     startActivity(intent)
             }
-            R.id.web -> {
-                val intent = Intent(this, webView::class.java)
-                startActivity(intent)
-            }
+            
         }
         return super.onOptionsItemSelected(item)
     }

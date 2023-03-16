@@ -31,6 +31,11 @@ class contact_us : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
 
+            R.id.email_btn -> {
+                val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:kaushikshatakshi427@gmail.com"))
+                startActivity(intent)
+            }
+
             R.id.call_btn -> {
                 if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) == PERMISSION_GRANTED ){
                     val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:7080807811"))
