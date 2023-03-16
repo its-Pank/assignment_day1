@@ -175,7 +175,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, chart::class.java)
                     startActivity(intent)
             }
-            
+
         }
         return super.onOptionsItemSelected(item)
     }
@@ -200,6 +200,7 @@ class MainActivity : AppCompatActivity() {
         val alertDialog: AlertDialog = builder.create()
         alertDialog.setCancelable(false)
         alertDialog.show()
+        
 
     }
 
